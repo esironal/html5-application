@@ -20,29 +20,31 @@ var content = (function ($) {
 	// 2: Methoden, funktionale Objekte
 	// Objekt in JSON Schreibweise
 	fn = {
-		init    	: 	function () {
-							console.log('content init!');
+		init    		: 	function () {
+								console.log('content init!');
 
-							// Ajax Initialisierung
-							$.ajaxSetup({
-								type     : 'get',
-								dataType : 'html',
-								async    : true,
-								cache    : false,
-								timeout  : 10000,
+								// Ajax Initialisierung
+								$.ajaxSetup({
+									type     : 'get',
+									dataType : 'html',
+									async    : true,
+									cache    : false,
+									timeout  : 10000,
 
-								statusCode : {
-									'200' : function () { console.log('200!'); },
-									'404' : function () { console.log('404!'); }
-								},
+									statusCode : {
+										'200' : function () { console.log('200!'); },
+										'404' : function () { console.log('404!'); }
+									},
 
-								beforeSend : function () { console.log('ajax before!'); },
-								complete   : function () { console.log('ajax complete!'); },
-							});
-						},
+									beforeSend : function () { console.log('ajax before!'); },
+									complete   : function () { console.log('ajax complete!'); },
+								});
+							},
+
 		showHtmlContent : 	function (context, response) {
 								$(context).html(response);
-		},	
+							},
+
 		onloadhtml  	: 	function () {
 								var request = $.ajax({ url : url, context : context });
 								
@@ -51,6 +53,7 @@ var content = (function ($) {
 								} );
 								request.fail( function (jqxhr) {} );
 							}
+
 		onclick    		: 	function () {
 								console.log('content onclick!');
 							}
