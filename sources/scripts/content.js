@@ -14,7 +14,9 @@ var content = (function ($) {
 		fn   = {},
 		data = null,
 
+		context       = '#content',
 		attributeList = {'A' : 'href', 'FORM' : 'action', 'BUTTON' : 'data-load'},
+	
 	end;
 
 	// 2: Methoden, funktionale Objekte
@@ -48,8 +50,9 @@ var content = (function ($) {
 								// Url und Datentyp ermitteln
 								// 1: Tagname ermitteln
 								element = event.target.tagName;
-								
+								url     = $(event.target).attr(attributeList[element]);
 
+								fn.onloadhtml();
 
 								// 2: Datentyp ermitteln
 							},
