@@ -48,8 +48,7 @@ var content = (function ($) {
 								// Url und Datentyp ermitteln
 								// 1: Tagname ermitteln
 								element = event.target.tagName;
-								console.log(element);
-								console.log(event.target);
+								
 
 
 								// 2: Datentyp ermitteln
