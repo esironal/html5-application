@@ -52,7 +52,7 @@ var content = (function ($) {
 									fn.showHtmlContent(this, response);
 								} );
 								request.fail( function (jqxhr) {} );
-							}
+							},
 
 		onclick    		: 	function () {
 								console.log('content onclick!');
