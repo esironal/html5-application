@@ -14,7 +14,7 @@ var content = (function ($) {
 		fn   = {},
 		data = null,
 
-		attributeList = {'A' : 'href', 'FORM' : 'action'},
+		attributeList = {'A' : 'href', 'FORM' : 'action', 'BUTTON' : 'data-load'},
 	end;
 
 	// 2: Methoden, funktionale Objekte
@@ -41,6 +41,20 @@ var content = (function ($) {
 								});
 							},
 
+		load            : 	function () {
+								// block the browser!
+								event.preventDefault();
+
+								// Url und Datentyp ermitteln
+								// 1: Tagname ermitteln
+								element = event.target.tagName;
+								console.log(element);
+								console.log(event.target);
+
+
+								// 2: Datentyp ermitteln
+							},
+
 		showHtmlContent : 	function (context, response) {
 								$(context).html(response);
 							},
@@ -52,10 +66,6 @@ var content = (function ($) {
 									fn.showHtmlContent(this, response);
 								} );
 								request.fail( function (jqxhr) {} );
-							},
-
-		onclick    		: 	function () {
-								console.log('content onclick!');
 							}
 	};
 
@@ -73,7 +83,7 @@ $(document).ready(function () {
 // - - - - - - - - - -
 
 	content.init();
-	$('#nav-main').on('click', 'button', content.onclick);
+	$('#nav-main').on('click', 'button', content.load);
 
 // - - - - - - - - - -
 });
