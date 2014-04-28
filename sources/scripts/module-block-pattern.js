@@ -27,7 +27,7 @@ Number
 String
 Math
 Date
-...
+
 
 // Objekte als Funktionen
 // -> Eine Funktion ist auch ein Objekt
@@ -57,8 +57,12 @@ var singleton = (function ($) {
 	// 2: Methoden, funktionale Objekte
 	// Objekt in JSON Schreibweise
 	fn = {
-		init    : function () {},
-		onclick : function () {}
+		init    : 	function () {
+						console.log('fn init!');
+					},
+		onclick : 	function () {
+						console.log('fn onclick!');
+					}
 	};
 
 	// 3: Eventgerüst, falls notwendig
@@ -67,13 +71,27 @@ var singleton = (function ($) {
 	return fn;
 
 // - - - - - - - - - -
-};)(jQuery);
+})(jQuery);
 
 // DOM Anwendung des Singletons
-document
-	.querySelector('#id')
-	.addEventListener('click', singleton.onclick, false);
- 
+// Javascript Ausführung nach window
+window.onload = function () {
+	document
+		.querySelector('#id')
+		.addEventListener('click', singleton.onclick, false);
+ }
+
+ // jQuery DOM Security
+ // $(function(){});
+ $(document).ready(function () {
+ 'use strict';
+ // - - - - - - - - - -
+
+ 	singleton.init();
+ 	$('#id').on('click', singleton.onclick);
+
+ // - - - - - - - - - -
+ });
 
 
 
