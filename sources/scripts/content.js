@@ -5,7 +5,7 @@ var content = (function ($) {
 // - - - - - - - - - -
 
 	// 1: Initialisierung
-	// @todo: button/span Doppel auflösen!
+	// @todo: Konfigurationsliste für Attribute auflösen!
 	var
 		element  = null,
 		response = null,
@@ -14,9 +14,14 @@ var content = (function ($) {
 		fn   = {},
 		data = null,
 
-		url	          = $('#btn-user').closest('[data-load]').data('load'),
+		url	          = $('#btn-user').data('load'),
 		context       = '#content',
-		attributeList = {'A' : 'href', 'FORM' : 'action', 'BUTTON' : 'data-load', 'SPAN' : 'data-load'},
+		attributeList = {
+							'A'      : 'href', 
+							'FORM'   : 'action', 
+							'BUTTON' : 'data-load', 
+							'SPAN'   : 'data-load'
+						},
 	
 	end;
 
