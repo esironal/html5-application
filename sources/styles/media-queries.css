@@ -13,6 +13,47 @@
 	float, clear
 	
 	*/
+
+  .help-block {
+    display: none;
+  }
+  #chat {
+    background: #eee;
+    color: #000000;
+  }
+  #chat label {
+    display: none;
+  }
+  #chat input,
+  #chat output,
+  #chat button {
+    background: #cccccc;
+  }
+  #input {
+    display: inline-block;
+    width: 75%;
+    margin-right: 5%;
+    border: 1px solid #ffffff;
+    background: transparent;
+  }
+  #send {
+    display: inline-block;
+    width: 20%;
+  }
+  #output > div {
+    background: transparent;
+    border: 1px solid #000;
+    height: 8em;
+    overflow: auto;
+    text-overflow: scroll;
+  }
+  #settings > input {
+    border: 1px solid #ffffff;
+    background: #333333;
+  }
+  .help-block {
+    color: 0%;
+  }
 }
 
 /* TABLETS im Hochformat @screen-sm */
