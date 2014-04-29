@@ -1,0 +1,40 @@
+
+
+// Semantical HTML Templates
+
+section
+	header
+	nav
+	main
+	aside
+	footer
+
+
+article
+	header
+		h1
+		address // Autorenangaben
+		time
+	main
+		p
+		figure
+			img
+			picture
+			video
+			audio
+			figcaption
+	aside
+	footer
+
+
+	div.viewport
+	nav#main
+		header
+		ul
+			li+
+
+
+
+
+
+
