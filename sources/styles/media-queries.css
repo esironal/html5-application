@@ -1,0 +1,32 @@
+/* Media Queries  nach Bootstrap */
+
+/* SMARTPHONE BEI BOOTSTRAP @screen-xs */
+@media ( max-width : 767px ) {
+	body { background : lightsteelblue; }
+	/* 
+	LAYOUT:
+
+	display, flex
+	width, height
+	margin, padding
+	box-sizing
+	float, clear
+	
+	*/
+}
+
+/* TABLETS im Hochformat @screen-sm */
+@media ( min-width : 768px ) and ( max-width : 991px ) {
+	body { background : green; }
+}
+
+/* TABLETS im Querformat, Desktop mit normaler Größe @screen-md */
+@media ( min-width : 992px ) and ( max-width : 1199px ) {
+	body { background : blue; }
+}
+
+/* DESKTOPS mit grossen Bildschirme @screen-lg */
+@media ( min-width : 1200px ) {
+	body { background : orange; }
+}
+

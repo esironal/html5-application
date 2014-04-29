@@ -34,7 +34,7 @@ var content = (function ($) {
 
 		// Methods
 		init    		: 	function () {
-								console.log('content init!');
+								//console.log('content init!');
 
 								// Ajax Initialisierung
 								$.ajaxSetup({
@@ -45,12 +45,12 @@ var content = (function ($) {
 									timeout  : 10000,
 
 									statusCode : {
-										'200' : function () { console.log('200!'); },
-										'404' : function () { console.log('404!'); }
+										'200' : function () { //console.log('200!'); },
+										'404' : function () { //console.log('404!'); }
 									},
 
-									beforeSend : function () { console.log('ajax before!'); },
-									complete   : function () { console.log('ajax complete!'); },
+									beforeSend : function () { //console.log('ajax before!'); },
+									complete   : function () { //console.log('ajax complete!'); },
 								});
 
 								fn.loadHtml();
@@ -61,9 +61,8 @@ var content = (function ($) {
 								event.preventDefault();
 
 								// Ein Blick in das Eventobjekt
-								for (var key in event) console.log(key);
-
-								console.log(event.currentTarget);
+								// for (var key in event) console.log(key);
+								// console.log(event.currentTarget);
 
 								// Url und Datentyp ermitteln
 								// 1: Tagname ermitteln
