@@ -10,7 +10,8 @@ var storage = (function ($) {
 
 	fn = {
 		onstorevalues 	: 	function () {
-								
+								event.preventDefault();
+								console.log('storage store values!');
 							},
 	};
 
@@ -21,6 +22,15 @@ var storage = (function ($) {
 
 $(document).ready(function () {
 
-	$('form').on('submit', storage.onstorevalues);
+	$('body').on('click', 'input[type=submit]', storage.onstorevalues);
 
 });
+
+
+
+
+
+
+
+
+
