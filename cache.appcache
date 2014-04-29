@@ -8,6 +8,7 @@ index.html
 CACHE:
 libraries/bootstrap/css/bootstrap.min.css
 sources/styles/media-queries.css
+
 libraries/jquery/jquery-2.1.0.min.js
 libraries/jquery/jquery-migrate-1.2.1.min.js
 sources/scripts/content.js
@@ -21,5 +22,24 @@ libraries/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsr
 
 
 NETWORK:
+app/server.php
 *
+
+
+FALLBACK:
+app/server.php no-server.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
