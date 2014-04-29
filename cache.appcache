@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-#version 005
+#version 008
 
 #master
 index.html
@@ -12,6 +12,7 @@ sources/styles/media-queries.css
 libraries/jquery/jquery-2.1.0.min.js
 libraries/jquery/jquery-migrate-1.2.1.min.js
 sources/scripts/content.js
+sources/scripts/appcache.js
 
 
 libraries/bootstrap/fonts/glyphicons-halflings-regular.woff
@@ -28,18 +29,3 @@ app/server.php
 
 FALLBACK:
 app/server.php no-server.html
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
