@@ -5,6 +5,7 @@ var content = (function ($) {
 // - - - - - - - - - -
 
 	// 1: Initialisierung
+	// @todo: button/span Doppel auflösen!
 	var
 		element  = null,
 		response = null,
@@ -13,7 +14,7 @@ var content = (function ($) {
 		fn   = {},
 		data = null,
 
-		url	          = $('#btn-user').attr('data-load'),
+		url	          = $('#btn-user').closest('[data-load]').data('load'),
 		context       = '#content',
 		attributeList = {'A' : 'href', 'FORM' : 'action', 'BUTTON' : 'data-load', 'SPAN' : 'data-load'},
 	
@@ -54,10 +55,17 @@ var content = (function ($) {
 								// block the browser!
 								event.preventDefault();
 
+								// Ein Blick in das Eventobjekt
+								for (var key in event) console.log(key);
+
+								console.log(event.currentTarget);
+
 								// Url und Datentyp ermitteln
 								// 1: Tagname ermitteln
 								element  = event.target.tagName;
-								url      = $(event.target).attr(attributeList[element]);
+								url      = $(event.target)
+											.closest('[' + attributeList[element] + ']')
+											.attr(attributeList[element]);
 
 								fn.loadHtml();
 
@@ -99,6 +107,8 @@ $(document).ready(function () {
 });
 
 
+// $('span').closest('[data-load]').data('load')
+// $('button').data('load')
 
 
 
