@@ -21,6 +21,6 @@ var storage = (function ($) {
 
 $(document).ready(function () {
 
-	$('form').on('submit', cache.onstorevalues);
+	$('form').on('submit', storage.onstorevalues);
 
 });
