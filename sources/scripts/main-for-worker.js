@@ -21,10 +21,15 @@ var worker = (function ($) {
 							fn.send('go');
 						},
 		onmessage : 	function () {
-							$('#worker-messages').append(event.data);
+							var object = JSON.parse(event.data);
+							
+							if (object.console)
+								console.log(object.console);
+							if (object.dom)
+								$('#worker-messages').append(object.dom);
 						},
 		send      : 	function (data) {
-							worker.postMessage(data);
+							worker.postMessage( data );
 						},
 		terminate : 	function () {
 							worker.terminate();

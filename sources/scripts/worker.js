@@ -21,15 +21,15 @@ fn = {
 					},
 
 	send        : 	function (data) {
-						self.postMessage({'dom : ' + '"' + data + '"' });
+						self.postMessage('{"dom" : ' + '"' + data + '"}' );
 					},
 	log 		: 	function (message) {
-						self.postMessage({'console : ' + '"' + message + '"' });
+						self.postMessage('{"console" : ' + '"' + message + '"}' );
 					}
 };
 
 // Eventlistener
-self.addEventListener('message', function () { fn.log(event.data); }, false);
+self.addEventListener('message', function () { fn.log('nachricht '); }, false);
 
 setInterval(fn.pickAWord, Math.random()*500);
 
