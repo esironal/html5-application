@@ -6,21 +6,44 @@ var storage = (function ($) {
 
 	var
 		fn   = {},
-		data = null,
 		
 		element = '#chat [type=text]',
 	end;
 
 	fn = {
+		key   			: null,
+		value 			: null,
+
 		onstorevalues 	: 	function () {
 								event.preventDefault();
 								console.log('storage store values!');
 
-								data = $(element).val();
-								fn.storeData();
+								fn.value = $(element).val();
+								fn.key   =    $(element).attr('name')
+										   || $(element).attr('id');
+
+								fn.storeRecord();
+
 							},
-		storeData       : 	function () {
-								localStorage.setItem('chatData', data);
+		storeRecord     : 	function () {
+								localStorage.setItem(fn.key, fn.value);
+							},
+		getRecord       : 	function () {
+								return localStorage.getItem(fn.key);
+							},
+		removeRecord    : 	function () {
+								localStorage.removeItem(fn.key);
+							},
+		ajaxLoad        : 	function () {
+
+								$.ajax({
+									url : url;
+									success : function (response) {
+										 $(response).each(function (index, item) {
+										 	return item;
+										 });
+									}
+								});
 							}
 	};
 
