@@ -40,8 +40,8 @@ $(document).ready(function () {
 'use strict';
 // - - - - - - - - - -
 
-	$('#start').on('click', fn.init);
-	$('#stop').on( 'click', fn.terminate);
+	$('#start').on('click', worker.init);
+	$('#stop').on( 'click', worker.terminate);
 
 // - - - - - - - - - -	
 });

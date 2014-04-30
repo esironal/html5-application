@@ -37,7 +37,7 @@ var storage = (function ($) {
 		ajaxLoad        : 	function () {
 
 								$.ajax({
-									url : url;
+									url : url,
 									success : function (response) {
 										 $(response).each(function (index, item) {
 										 	return item;
